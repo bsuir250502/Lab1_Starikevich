@@ -5,6 +5,7 @@ extern "C" {
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdio_ext.h>
 #define N 6
 
 struct hospital_info
@@ -45,7 +46,7 @@ int main()
 	printf("\n---------------lab1.4------------\n\n");
 
 	print_table();
-	
+
 	alphabet_sort();
 
 	print_surnames();
@@ -84,7 +85,7 @@ int print_surnames()
 
 	printf("\n\nEnter the name of disease: ");
 	scanf("%s", disease);
-	
+
 	int i=0, j=1, head=1, exist=0;
 
 	while(i<N)
@@ -127,7 +128,9 @@ int print_table()
 		printf("Do you want to print table? (requires full-screen mode) (y/n) ");	
 
 		answer = getchar();
-		
+
+		__fpurge(stdin);
+
 		if(answer == 'y' || answer == 'Y')	
 		{
 			int i;
